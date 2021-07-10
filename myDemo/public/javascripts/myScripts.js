@@ -8,20 +8,23 @@ $(document).ready(function() {
       $(this).css("color", "black");
     },
     function() {
-      //$(this).hide();
       $(this).css("color", "white");
     }
   );
 
-  /*  $("#but").click(function() {
-    var num = $(this).val();
-    var number = parseInt(num);
-    number += 1;
+  $("#hiddenForm").hide();
 
-    $(this).val(number);
+  $("#addButton").click(function() {
+    $("#hiddenForm").show();
+  });
 
-    alert("You have clicked " + number + " times!");
-  }); */
+  $("#register").click(function() {
+    $("#hiddenForm").hide();
+  });
+
+  $("#cancel").click(function() {
+    $("#hiddenForm").hide();
+  });
 
   $("#but").click(function() {
     $(this).val(function(n, c) {

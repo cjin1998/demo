@@ -1,1 +1,63 @@
-<h1>{{title}}</h1>
+<div class="container border border-dark border-3 p-2 d-flex justify-content-end">
+
+    <div class="p-3 border border-primary border-3" style="width: 77%">
+        <button class="float-end m-2" id="addButton" value=0 type="button">ADD</button>
+        <div id="hiddenForm" style="display: inline">
+            <form class="row g-3 border border-dark p-2 m-2">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">State</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" id="register" class="btn btn-primary">Register</button>
+                    <button type="submit" id="cancel" class="btn btn-primary float-end">cancel</button>
+                </div>
+            </form>
+        </div>
+
+
+        <table class="table table-bordered border-success">
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td><button type="button" id="but" value=0>Edit</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td><button type="button">Edit</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td><button type="button">Edit</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>

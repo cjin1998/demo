@@ -4,5 +4,14 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.title {
+  color: purple;
+}
+
+.someText {
+  text-align: center;
+  color: white;
 }

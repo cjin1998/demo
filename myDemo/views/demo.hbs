@@ -4,24 +4,24 @@
         <button class="float-end m-2" id="addButton" value=0 type="button">ADD</button>
         <div id="hiddenForm" style="display: inline">
             <form class="row g-3 border border-dark p-2 m-2">
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
+                <div class="col-md-4">
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="inputName">
                 </div>
+
                 <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail">
                 </div>
                 <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
+                    <label for="inputDate" class="form-label">Birthday</label>
+                    <input type="text" class="form-control" placeholder="yyyy-mm-dd" id="inputDate">
                 </div>
                 <div class="col-12">
-                    <button type="submit" id="register" class="btn btn-primary">Register</button>
-                    <button type="submit" id="cancel" class="btn btn-primary float-end">cancel</button>
+
+                    <button class="float-start m-2" id="register" value=0 type="button">Register</button>
+                    <button class="float-end m-2" id="cancel" value=0 type="button">Cancel</button>
+
                 </div>
             </form>
         </div>
@@ -31,31 +31,35 @@
 
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Edit</th>
+                    <th class="col-2" scope="col">Name</th>
+                    <th class="col-4" scope="col">Email</th>
+                    <th class="col-4" scope="col">Birthday</th>
+                    <th class="col-2" scope="col">Edit</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="tbody">
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td><button type="button" id="but" value=0>Edit</button></td>
+                    <td class="name">Jacob</td>
+                    <td class="email">j@gmail.com</td>
+                    <td class="birthday">1998-09-17</td>
+                    <td><button type="button" class="edit">Edit</button></td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td><button type="button">Edit</button></td>
+                    <td class="name">makk</td>
+                    <td class="email">m@gmail.com</td>
+                    <td class="birthday">1972-10-06</td>
+                    <td><button type="button" class="edit">Edit</button></td>
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td><button type="button">Edit</button></td>
+                    <td class="name"><input type="text" class="form-control editName"></td>
+                    <td class="email"><input type="email" class="form-control editEmail"></td>
+                    <td class="birthday"><input type="text" class="form-control editBirthday"></td>
+                    <td><button type="button" class="edit">Edit</button></td>
                 </tr>
+
+
             </tbody>
+
 
         </table>
     </div>

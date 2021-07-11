@@ -15,3 +15,7 @@ a {
   text-align: center;
   color: white;
 }
+
+form .error {
+  color: #ff0000;
+}

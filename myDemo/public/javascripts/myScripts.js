@@ -1,45 +1,61 @@
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
-
 $(document).ready(function() {
-  $("#hidden").hover(
-    function() {
-      $(this).css("color", "black");
-    },
-    function() {
-      $(this).css("color", "white");
-    }
-  );
-
   $("#hiddenForm").hide();
 
   $("#addButton").click(function() {
     $("#hiddenForm").show();
+    $("form[name='registration']").validate({
+      rules: {
+        inputName: {
+          required: true,
+          minlength: 2
+        },
+
+        inputEmail: {
+          required: true,
+          email: true
+        }
+      },
+
+      messages: {
+        inputName: {
+          required: "Please enter your firstname",
+          minlength: "Your name must be at least 2 characters long"
+        },
+
+        inputEmail: "Please enter a valid email address"
+      }
+    });
   });
 
   $("#register").click(function() {
-    $("#hiddenForm").hide();
-    var name = $("#inputName").val();
-    var email = $("#inputEmail").val();
-    var birthday = $("#inputDate").val();
+    if ($("form[name='registration']").valid()) {
+      $("#hiddenForm").hide();
+      var name = $("#inputName").val();
+      var email = $("#inputEmail").val();
+      var birthday = $("#inputDate").val();
 
-    $(".tbody").append(
-      "<tr><td class='name'>" +
-        name +
-        "</td><td class='email'>" +
-        email +
-        "</td><td class='birthday'>" +
-        birthday +
-        '</td><td><button type="button" class="edit">Edit</button></td></tr>'
-    );
+      $(".tbody").append(
+        "<tr><td class='name'>" +
+          name +
+          "</td><td class='email'>" +
+          email +
+          "</td><td class='birthday'>" +
+          birthday +
+          '</td><td><button type="button" class="edit">Edit</button></td></tr>'
+      );
 
-    $("#inputName").val("");
-    $("#inputEmail").val("");
-    $("#inputDate").val("");
+      $("#inputName").val("");
+      $("#inputEmail").val("");
+      $("#inputDate").val("");
+    } else {
+      alert("Please fix the errors before submission :)");
+    }
   });
 
   $("#cancel").click(function() {
+    $("#inputName").val("");
+    $("#inputEmail").val("");
+    $("#inputDate").val("");
     $("#hiddenForm").hide();
   });
 
@@ -158,6 +174,15 @@ $(document).ready(function() {
       .remove();
   });
 
+  $("#hidden").hover(
+    function() {
+      $(this).css("color", "black");
+    },
+    function() {
+      $(this).css("color", "white");
+    }
+  );
+
   $("#but").click(function() {
     $(this).val(function(n, c) {
       var number = parseInt(c) + 1;
@@ -166,3 +191,7 @@ $(document).ready(function() {
     });
   });
 });
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}

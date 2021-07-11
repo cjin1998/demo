@@ -3,25 +3,25 @@
     <div class="p-3 border border-primary border-3" style="width: 77%">
         <button class="float-end m-2" id="addButton" value=0 type="button">ADD</button>
         <div id="hiddenForm" style="display: inline">
-            <form class="row g-3 border border-dark p-2 m-2">
+            <form class="row g-3 border border-dark p-2 m-2" name="registration">
                 <div class="col-md-4">
                     <label for="inputName" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="inputName">
+                    <input type="text" class="form-control" name="inputName" placeholder="John Doe" id="inputName">
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail">
+                    <input type="email" class="form-control" name="inputEmail" placeholder="abc@mail.com"
+                        id="inputEmail">
                 </div>
                 <div class="col-md-4">
                     <label for="inputDate" class="form-label">Birthday</label>
-                    <input type="text" class="form-control" placeholder="yyyy-mm-dd" id="inputDate">
+                    <input type="text" class="form-control" name="inputDate" placeholder="yyyy-mm-dd" id="inputDate">
                 </div>
+
                 <div class="col-12">
-
-                    <button class="float-start m-2" id="register" value=0 type="button">Register</button>
-                    <button class="float-end m-2" id="cancel" value=0 type="button">Cancel</button>
-
+                    <button class="float-start m-2" id="register" type="button">Register</button>
+                    <button class="float-end m-2 cancel" id="cancel" value="cancel" type="button">Cancel</button>
                 </div>
             </form>
         </div>
@@ -50,14 +50,6 @@
                     <td class="birthday">1972-10-06</td>
                     <td><button type="button" class="edit">Edit</button></td>
                 </tr>
-                <tr>
-                    <td class="name"><input type="text" class="form-control editName"></td>
-                    <td class="email"><input type="email" class="form-control editEmail"></td>
-                    <td class="birthday"><input type="text" class="form-control editBirthday"></td>
-                    <td><button type="button" class="edit">Edit</button></td>
-                </tr>
-
-
             </tbody>
 
 

@@ -2,34 +2,74 @@ $(document).ready(function() {
   $("#hiddenForm").hide();
 
   $("#addButton").click(function() {
-    $("#hiddenForm").show();
-    $("form[name='registration']").validate({
-      rules: {
-        inputName: {
-          required: true,
-          minlength: 2
+    if ($(this).text() == "ADD") {
+      $(this).html("CANCEL");
+      $("#hiddenForm").show();
+
+      jQuery.validator.addMethod(
+        "dateFormat",
+        function(value, element) {
+          var year = parseInt(value.slice(0, 4));
+          var month = parseInt(value.slice(5, 7));
+          var day = parseInt(value.slice(8));
+
+          var firstSlash = value.slice(4, 5);
+          var secondSlash = value.slice(7, 8);
+
+          if (isNaN(year) || isNaN(month) || isNaN(day)) {
+            return false;
+          } else if (firstSlash != "-" || secondSlash != "-") {
+            return false;
+          }
+          return true;
+        },
+        ""
+      );
+
+      $("form[name='registration']").validate({
+        rules: {
+          inputName: {
+            required: true,
+            minlength: 2
+          },
+
+          inputEmail: {
+            required: true,
+            email: true
+          },
+
+          inputDate: {
+            required: true,
+            dateFormat: true
+          }
         },
 
-        inputEmail: {
-          required: true,
-          email: true
+        messages: {
+          inputName: {
+            required: "Please enter your name",
+            minlength: "Your name must be at least 2 characters long"
+          },
+
+          inputEmail: "Please enter a valid email address",
+          inputDate: {
+            required: "Please enter your birthday",
+            dateFormat: "Date format must be yyyy-mm-dd"
+          }
         }
-      },
-
-      messages: {
-        inputName: {
-          required: "Please enter your firstname",
-          minlength: "Your name must be at least 2 characters long"
-        },
-
-        inputEmail: "Please enter a valid email address"
-      }
-    });
+      });
+    } else {
+      $(this).html("ADD");
+      $("#inputName").val("");
+      $("#inputEmail").val("");
+      $("#inputDate").val("");
+      $("#hiddenForm").hide();
+    }
   });
 
   $("#register").click(function() {
     if ($("form[name='registration']").valid()) {
       $("#hiddenForm").hide();
+      $("#addButton").html("ADD");
       var name = $("#inputName").val();
       var email = $("#inputEmail").val();
       var birthday = $("#inputDate").val();
@@ -48,19 +88,14 @@ $(document).ready(function() {
       $("#inputEmail").val("");
       $("#inputDate").val("");
     } else {
-      alert("Please fix the errors before submission :)");
+      alert("Please complete the form correctly before submission :)");
     }
-  });
-
-  $("#cancel").click(function() {
-    $("#inputName").val("");
-    $("#inputEmail").val("");
-    $("#inputDate").val("");
-    $("#hiddenForm").hide();
   });
 
   $(document).on("click", ".edit", function() {
     if ($(this).text() == "Edit") {
+      $(this).html("Save");
+
       var name = $(this)
         .closest("tr")
         .find(".name")
@@ -103,7 +138,6 @@ $(document).ready(function() {
         .closest("tr")
         .find(".birthday")
         .text();
-      $(this).html("Save");
 
       $(this)
         .closest("tr")
@@ -123,6 +157,7 @@ $(document).ready(function() {
         .closest("td")
         .append('<button type="button" class="ms-1 delete">Delete</button>');
     } else {
+      $(this).html("Edit");
       //save button functions
       var newName = $(this)
         .closest("tr")
@@ -159,7 +194,6 @@ $(document).ready(function() {
         .find(".birthday")
         .html(newBirthday);
 
-      $(this).html("Edit");
       $(this)
         .closest("td")
         .find(".delete")

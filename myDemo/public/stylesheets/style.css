@@ -20,20 +20,6 @@ form .error {
   color: #ff0000;
 }
 
-@media (max-width: 576px) {
-  .bluebox {
-    min-width: 380px;
-  }
-
-  .greenbox {
-    max-width: 350px;
-  }
-
-  .blackbox {
-    min-width: 400px;
-  }
-}
-
 @media (min-width: 1190px) {
   .bluebox {
     max-width: 1000px;

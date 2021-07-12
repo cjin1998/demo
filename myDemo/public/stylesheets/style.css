@@ -20,7 +20,7 @@ form .error {
   color: #ff0000;
 }
 
-@media (min-width: 1190px) {
+@media only screen and (min-width: 1190px) {
   .bluebox {
     max-width: 1000px;
   }

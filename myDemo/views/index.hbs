@@ -1,41 +1,20 @@
-<h1>{{title}}</h1>
-<p class="title">Welcome to {{title}}</p>
-
-
-<div class="test">
-    <p id="demo">A Paragraph.</p>
-    <button type="button" onclick="myFunction()">Try it</button>
-    <p>(myFunction is stored in an external file called "myScripts.js")</p>
-</div>
-
-
-
-<div class="test2">
-    <h1 class="someText" id="hidden">I was hidden</h1>
-
-    <button type="button" id="but" value=0>click me to alert</button>
-
-</div>
-
-
 <div class="container">
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row">
+        <div class="col-md-8 bg-primary">.col-md-8</div>
+        <div class="col-6 col-md-4 bg-warning">.col-6 .col-md-4</div>
+    </div>
 
-    <form action="#" name="registration">
+    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+    <div class="row">
+        <div class="col-6 col-md-4 bg-primary">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4 bg-warning">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4 bg-success">.col-6 .col-md-4</div>
+    </div>
 
-        <label for="firstname">First Name</label>
-        <input type="text" name="firstname" id="firstname" placeholder="John">
-
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" id="lastname" placeholder="Doe">
-
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="john@doe.com">
-
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;">
-
-        <button type="submit">Register</button>
-    </form>
-
-
+    <!-- Columns are always 50% wide, on mobile and desktop -->
+    <div class="row">
+        <div class="col-6">.col-6</div>
+        <div class="col-6">.col-6</div>
+    </div>
 </div>
